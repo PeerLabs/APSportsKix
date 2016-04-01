@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6cw-hv-WlW">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="APSportsKix" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usI-Nh-GOT">
+                                <rect key="frame" x="40" y="192" width="520" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-kx-sks">
+                                <rect key="frame" x="223" y="416" width="154" height="30"/>
+                                <state key="normal" title="Request SportsKix API"/>
+                                <connections>
+                                    <segue destination="Rfy-qB-jzH" kind="show" identifier="requestVenuesSegue" id="b7l-Cw-NRx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-g4-jVr">
+                                <rect key="frame" x="150" y="163" width="300" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Select Number of Venues to Display?">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="usI-Nh-GOT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="1S3-a0-wzC"/>
+                            <constraint firstItem="Ib7-kx-sks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3S2-SM-kds"/>
+                            <constraint firstItem="Ib7-kx-sks" firstAttribute="top" secondItem="usI-Nh-GOT" secondAttribute="bottom" constant="8" id="IFE-sq-OFN"/>
+                            <constraint firstItem="usI-Nh-GOT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qe5-MM-dA7"/>
+                            <constraint firstItem="usI-Nh-GOT" firstAttribute="top" secondItem="8aT-g4-jVr" secondAttribute="bottom" constant="8" id="atc-oW-3uE"/>
+                            <constraint firstItem="usI-Nh-GOT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eg5-lD-bBh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="usI-Nh-GOT" secondAttribute="trailing" constant="20" id="h54-0A-Yq8"/>
+                            <constraint firstItem="8aT-g4-jVr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zun-cT-gad"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wsJ-Nv-mWI"/>
+                    <connections>
+                        <outlet property="limitPicker" destination="usI-Nh-GOT" id="U0C-bc-Ozf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="238"/>
+        </scene>
+        <!--Venues List-->
+        <scene sceneID="oB2-Iy-50U">
+            <objects>
+                <tableViewController id="Rfy-qB-jzH" customClass="VenuesTableViewController" customModule="APSportsKix" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x7U-5g-krC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VenueCell" textLabel="GMQ-kA-D96" detailTextLabel="HgX-Nx-meN" style="IBUITableViewCellStyleSubtitle" id="1QK-qr-zMv">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1QK-qr-zMv" id="K4q-M4-nsR">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GMQ-kA-D96">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HgX-Nx-meN">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="YO7-Lf-zf2" kind="show" identifier="showDetail" id="za7-Wr-T1l"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rfy-qB-jzH" id="C09-JB-d8v"/>
+                            <outlet property="delegate" destination="Rfy-qB-jzH" id="hvS-Yu-39L"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Venues List" id="Hmz-xj-Kh5">
+                        <barButtonItem key="rightBarButtonItem" image="filter" id="bPl-6i-d29">
+                            <connections>
+                                <action selector="showAlertViewController:" destination="Rfy-qB-jzH" id="244-Fb-F53"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xpr-47-crb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="238"/>
+        </scene>
+        <!--Venue Detail View Controller-->
+        <scene sceneID="Fpk-sy-J7w">
+            <objects>
+                <viewController id="YO7-Lf-zf2" customClass="VenueDetailViewController" customModule="APSportsKix" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yds-WT-dWR"/>
+                        <viewControllerLayoutGuide type="bottom" id="k51-bI-BhP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GN6-g3-RfE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Peg-sD-TKZ">
+                                <rect key="frame" x="20" y="224" width="560" height="152"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmQ-vU-WXm">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="27"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Opened:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHn-Zd-zXu">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="1977" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zi-wY-UzU">
+                                                <rect key="frame" x="133" y="0.0" width="427" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="kHn-Zd-zXu" firstAttribute="leading" secondItem="pmQ-vU-WXm" secondAttribute="leading" id="LUk-Xt-JwP"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Zi-wY-UzU" secondAttribute="trailing" id="XX0-Y1-GIZ"/>
+                                            <constraint firstItem="3Zi-wY-UzU" firstAttribute="leading" secondItem="kHn-Zd-zXu" secondAttribute="trailing" id="cox-bg-LwC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxC-jQ-trb">
+                                        <rect key="frame" x="0.0" y="27" width="560" height="27"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crowd Capacity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4M-Jd-6TX">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="39090" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akG-ul-sQp">
+                                                <rect key="frame" x="163" y="0.0" width="397" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-Od-k3G">
+                                        <rect key="frame" x="0.0" y="54" width="560" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEO URL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmp-sL-6KH">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEO URL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDJ-Q2-edi">
+                                                <rect key="frame" x="0.0" y="27" width="560" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pvC-I9-rlb">
+                                        <rect key="frame" x="0.0" y="103" width="560" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-P5-12K">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFy-av-mvk">
+                                                <rect key="frame" x="0.0" y="27" width="560" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wsY-Od-k3G" firstAttribute="top" secondItem="xxC-jQ-trb" secondAttribute="bottom" id="0lE-eC-K6b"/>
+                                    <constraint firstItem="xxC-jQ-trb" firstAttribute="top" secondItem="pmQ-vU-WXm" secondAttribute="bottom" id="1Ew-WT-9tr"/>
+                                    <constraint firstItem="wsY-Od-k3G" firstAttribute="centerX" secondItem="Peg-sD-TKZ" secondAttribute="centerX" id="2mw-Yr-bea"/>
+                                    <constraint firstItem="pvC-I9-rlb" firstAttribute="top" secondItem="wsY-Od-k3G" secondAttribute="bottom" id="A61-HP-ZHr"/>
+                                    <constraint firstItem="pvC-I9-rlb" firstAttribute="centerX" secondItem="Peg-sD-TKZ" secondAttribute="centerX" id="LWn-vy-sHr"/>
+                                    <constraint firstItem="xxC-jQ-trb" firstAttribute="centerX" secondItem="Peg-sD-TKZ" secondAttribute="centerX" id="Zwr-qv-CFB"/>
+                                    <constraint firstItem="pmQ-vU-WXm" firstAttribute="top" secondItem="Peg-sD-TKZ" secondAttribute="top" id="aEU-QF-k3W"/>
+                                    <constraint firstItem="xxC-jQ-trb" firstAttribute="top" secondItem="Peg-sD-TKZ" secondAttribute="top" id="vaL-yJ-fi5"/>
+                                    <constraint firstItem="pmQ-vU-WXm" firstAttribute="centerX" secondItem="Peg-sD-TKZ" secondAttribute="centerX" id="yDF-2X-FEi"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vaL-yJ-fi5"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPW-2Z-ldU">
+                                <rect key="frame" x="221" y="184" width="159" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Peg-sD-TKZ" firstAttribute="centerY" secondItem="GN6-g3-RfE" secondAttribute="centerY" id="5hv-eG-QTu"/>
+                            <constraint firstItem="Peg-sD-TKZ" firstAttribute="centerX" secondItem="GN6-g3-RfE" secondAttribute="centerX" id="N2Y-XM-g0V"/>
+                            <constraint firstItem="Peg-sD-TKZ" firstAttribute="leading" secondItem="GN6-g3-RfE" secondAttribute="leadingMargin" id="Nrk-88-hgy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Peg-sD-TKZ" secondAttribute="trailing" id="n3N-Cf-czx"/>
+                            <constraint firstItem="Peg-sD-TKZ" firstAttribute="top" secondItem="tPW-2Z-ldU" secondAttribute="bottom" constant="8" id="spy-5D-Tyv"/>
+                            <constraint firstItem="tPW-2Z-ldU" firstAttribute="centerX" secondItem="GN6-g3-RfE" secondAttribute="centerX" id="xXQ-34-rpv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="crowdCapacityLabel" destination="akG-ul-sQp" id="LCE-hL-W9q"/>
+                        <outlet property="seoUrlLabel" destination="aDJ-Q2-edi" id="Vca-8f-gju"/>
+                        <outlet property="urlLabel" destination="CFy-av-mvk" id="zOl-JX-Pco"/>
+                        <outlet property="yearOpenedLabel" destination="3Zi-wY-UzU" id="xUa-JH-H2J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e99-qa-P9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931" y="238"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TNR-bt-kfo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6cw-hv-WlW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wGv-RI-jsR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aXY-Pd-LZl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dO1-26-Ttq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="238"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filter" width="28" height="28"/>
+    </resources>
+</document>
