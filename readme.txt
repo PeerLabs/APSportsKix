@@ -1,22 +1,27 @@
 Requirements:
 
-XCode 7.2 (Swift 2.0)
+XCode 7.3 (Swift 2.0+)
 deployment target iOS 9.2
 CocoaPods 0.39.0
 
 Instructions:
 
-1. Unzip the file "APSportsKix.zip"
-2. In the Unzipped Folder run the command "pod install"
+1. Clone the project to a local folder:
+	- First ensure that you have Git Installed as well as a registered GitHub account on you local computer.
+	- In the command line go to a particular location and run the following command: “git clone https://github.com/PeerLabs/APSportsKix.git”
+		- This will clone the repository into a subfolder called “APSportsKix”
+	- From this point onwards the commands need to be run within the “APSportsKix” folder
+2. Run the command "pod install"
 3. Once that is completed, please open "APSportsKix.xcworkspace"
-4. Ensure You can build the app "Cmd-B"
-5. Sometimes Pods dont link up correctly, so if you get framework build errors, check the "Build Phases" tab on the project. There should be 4 items 
+4. Change the bundle identifier to something that may make sense to you: it is currently “com.peerlabs.apsportskix” so change it to a reverse dns-like identifier eg: com.sportskix.APSportsKix
+5. Ensure You can build the app "Cmd-B"
+6. Sometimes Pods dont link up correctly, so if you get framework build errors, check the "Build Phases" tab on the project. There should be 4 items 
 	- Alamofire.framework
 	- SwiftyJSON.framework
 	- XCLogger.framework
 	- Pods.framework
 
-6. If another API Key needs to be used, the following edit needs to be made...
+7. If another API Key needs to be used, the following edit needs to be made...
 	
 	- line 22 in the file SportsKixRouter.swift 
 
